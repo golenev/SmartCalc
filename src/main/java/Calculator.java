@@ -11,7 +11,7 @@ public class Calculator {
             num = scanner.nextInt();
         } else {
             System.out.println("Вы допустили ошибку при вводе числа. Попробуйте еще раз.");
-            scanner.next();//рекурсия
+            scanner.next();
             num = getInt();
         }
         return num;
@@ -22,16 +22,16 @@ public class Calculator {
         char operation;
         if (scanner.hasNext()) {
             operation = scanner.next().charAt(0);
-        } else { throw new ArithmeticException("не то");
-           // System.out.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
-            //scanner.next();
-           // operation = getOperation();
+        } else {
+            System.out.println("Вы допустили ошибку при вводе операции. Попробуйте еще раз.");
+            scanner.next();
+            operation = getOperation();
         }
         return operation;
     }
 
     public static double calc(double num1, double num2, char operation) {
-        double result = 0;
+        double result;
         switch (operation) {
             case ('+'):
                 result = num1 + num2;
@@ -43,11 +43,11 @@ public class Calculator {
                 result = num1 * num2;
                 break;
             case ('/'):
-
+                result = num1 / num2;
                 break;
             default:
-                throw new ArithmeticException(" не то");
-               // result = calc(num1, num2, getOperation());
+                System.out.println("Операция не распознана. Повторите ввод.");
+                result = calc(num1, num2, getOperation());
         }
         return result;
     }
