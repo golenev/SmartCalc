@@ -45,7 +45,7 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingSubNegative")
-    public void SubNegative(int expectedValue, int one, int two) {
+    public void subNegative(int expectedValue, int one, int two) {
         Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '-'));
     }
 
@@ -59,7 +59,7 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingSubPositive")
-    public void SubPositive(int expectedValue, int one, int two) {
+    public void subPositive(int expectedValue, int one, int two) {
         Assert.assertEquals(expectedValue, Calculator.calc(one, two, '-'));
     }
 
@@ -73,7 +73,7 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingMultPositive")
-    public void MultPositive(int expectedValue, int one, int two) {
+    public void multPositive(int expectedValue, int one, int two) {
         Assert.assertEquals(expectedValue, Calculator.calc(one, two, '*'));
     }
 
@@ -87,8 +87,8 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingMultNegative")
-    public void MultNegative(int expectedValue, int one, int two) {
-        Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '/'));
+    public void multNegative(int expectedValue, int one, int two) {
+        Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '*'));
     }
 
     @DataProvider
@@ -101,7 +101,7 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingDivNegative")
-    public void DivNegative(int expectedValue, int one, int two) {
+    public void divNegative(int expectedValue, int one, int two) {
         Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '/'));
     }
 
@@ -115,7 +115,7 @@ public class CalculatorTest {
     }
 
     @Test(dataProvider = "testingDivPositive")
-    public void DivPositive(int expectedValue, int one, int two) {
+    public void divPositive(int expectedValue, int one, int two) {
         Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '/'));
     }
 }
