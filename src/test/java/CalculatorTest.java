@@ -108,15 +108,15 @@ public class CalculatorTest {
     @DataProvider
     public static Object[][] testingDivPositive() {
         return new Object[][]{
-                {11, 2, 5},
-                {61, 2, 3},
-                {0, 678, 0}
+                {11, 22, 2},
+                {60, 120, 2},
+                {1, 678, 678}
         };
     }
 
     @Test(dataProvider = "testingDivPositive")
     public void divPositive(int expectedValue, int one, int two) {
-        Assert.assertNotEquals(expectedValue, Calculator.calc(one, two, '/'));
+        Assert.assertEquals(expectedValue, Calculator.calc(one, two, '/'));
     }
 }
 
